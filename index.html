@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hurricane Florence Data - SCDNR State Climate Office</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/sc-1.5.0/datatables.min.css"/>
+
+    <style>
+        .table-div {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            background-color:#343a40;
+        }
+        h2 {
+            border-bottom:1px solid #ccc;
+        }
+        .btn {
+            margin: 5px;
+        }
+        .img-div {
+            padding:10px;
+            border:1px solid #ddd;
+            border-radius:3px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hurricane Florence - Data</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <h1 class="mt-5">Hurricane Florence</h1>
+
+                <p class="lead">Data from the SCDNR State Climate Office from Hurricane Florence. Data and maps on this page are used in the <a href="https://scdnr.maps.arcgis.com/apps/MapJournal/index.html?appid=c2d63441bc974cadb52f0bed7528aae1" target="_blank">'Hurricane Florence in South Carolina' StoryMap</a>.</p>
+            </div>
+            <div class="col-lg-12">
+                <ul>
+                    <li><a href="#sec1">Wind Gusts</a></li>
+                    <li><a href="#sec2">Daily Precipitation</a></li>
+                    <li><a href="#sec3">Precipitation and ARI Grids</a></li>
+                    <li><a href="#sec4">Storm Comparison Maps</a></li>
+                    <li><a href="#sec5">Peak Stage and Streamflow Data</a></li>
+                    <li><a href="#sec6">Tidal Data</a></li>
+                </ul>
+            </div>
+            <div id="sec1" class="col-lg-12 mt-4">
+                <h2>Wind Gusts</h2>
+                <p>Some information on data sources for Wind Gusts</p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#wind-collapse" role="button" aria-expanded="false" aria-controls="wind-collapse">View Data Table</button>
+                <button class="btn btn-outline-success">Download CSV</button>
+                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <div class="collapse" id="wind-collapse">
+                    <div class="table-div p-3 mt-3" >
+                        <h3>Wind Gusts Table</h3>
+                        <table id="wind-table">
+                            <thead>
+                                <tr>
+                                    <th>Station</th>
+                                    <th>WindGust_mph</th>
+                                    <th>WindGust_kt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Charleston Intl AP</td>
+                                    <td>52.9</td>
+                                    <td>46</td>
+                                </tr>
+                                <tr>
+                                    <td>Beaufort County AP</td>
+                                    <td>42.6</td>
+                                    <td>37</td>
+                                </tr>
+                                <tr>
+                                    <td>Charleston Exec AP</td>
+                                    <td>39.1</td>
+                                    <td>34</td>
+                                </tr>
+                                <tr>
+                                    <td>Lake Moultrie</td>
+                                    <td>47.2</td>
+                                    <td>41</td>
+                                </tr>
+                                <tr>
+                                    <td>Sullivans Island</td>
+                                    <td>44.9</td>
+                                    <td>39</td>
+                                </tr>
+                                <tr>
+                                    <td>Isle of Palms</td>
+                                    <td>39.1</td>
+                                    <td>34</td>
+                                </tr>
+                                <tr>
+                                    <td>Charleston Battery</td>
+                                    <td>42.6</td>
+                                    <td>37</td>
+                                </tr>
+                                <tr>
+                                    <td>Folly Beach Pier</td>
+                                    <td>43.7</td>
+                                    <td>38</td>
+                                </tr>
+                                <tr>
+                                    <td>Charleston Harbor</td>
+                                    <td>55.2</td>
+                                    <td>48</td>
+                                </tr>
+                                <tr>
+                                    <td>Edisto Buoy</td>
+                                    <td>54.1</td>
+                                    <td>47</td>
+                                </tr>
+                                <tr>
+                                    <td>Capers Nearshore Buoy</td>
+                                    <td>50.6</td>
+                                    <td>44</td>
+                                </tr>
+                                <tr>
+                                    <td>North Myrtle Beach</td>
+                                    <td>59.8</td>
+                                    <td>52</td>
+                                </tr>
+                                <tr>
+                                    <td>Myrtle Beach</td>
+                                    <td>61.0</td>
+                                    <td>53</td>
+                                </tr>
+                                <tr>
+                                    <td>Florence</td>
+                                    <td>59.8</td>
+                                    <td>52</td>
+                                </tr>
+                                <tr>
+                                    <td>Georgetown</td>
+                                    <td>47.2</td>
+                                    <td>41</td>
+                                </tr>
+                                <tr>
+                                    <td>Darlington</td>
+                                    <td>49.5</td>
+                                    <td>43</td>
+                                </tr>
+                                <tr>
+                                    <td>Bennettsville</td>
+                                    <td>41.4</td>
+                                    <td>36</td>
+                                </tr>
+                                <tr>
+                                    <td>Marion</td>
+                                    <td>61.0</td>
+                                    <td>53</td>
+                                </tr>
+                                <tr>
+                                    <td>Kingstree</td>
+                                    <td>41.4</td>
+                                    <td>36</td>
+                                </tr>
+                                <tr>
+                                    <td>Hartsville</td>
+                                    <td>47.2</td>
+                                    <td>41</td>
+                                </tr>
+                                <tr>
+                                    <td>Cherry Grove Beach Pier</td>
+                                    <td>77.1</td>
+                                    <td>67</td>
+                                </tr>
+                                <tr>
+                                    <td>Murrells Inlet</td>
+                                    <td>58.7</td>
+                                    <td>51</td>
+                                </tr>
+                                <tr>
+                                    <td>Shaw AFB</td>
+                                    <td>54</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>McEntire ANG</td>
+                                    <td>47</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Sumter Muni AP</td>
+                                    <td>47</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Camden-Woodward Field</td>
+                                    <td>45</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Newberry County AP</td>
+                                    <td>43</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Orangeburg Muni AP</td>
+                                    <td>40</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Augusta Bush Field</td>
+                                    <td>39</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Columbia Metro AP</td>
+                                    <td>39</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Daniel Field</td>
+                                    <td>39</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Cheraw</td>
+                                    <td>37</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Barnwell Regional AP</td>
+                                    <td>37</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Aiken Muni AP</td>
+                                    <td>32</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Columbia Hamilton Owens AP</td>
+                                    <td>31</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Anderson County AP</td>
+                                    <td>39</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Chester Catawba Regional AP</td>
+                                    <td>49</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Greenville Dtown AP</td>
+                                    <td>39</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Greenwood County AP</td>
+                                    <td>37</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Laurens County AP</td>
+                                    <td>32</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Oconee County AP</td>
+                                    <td>40</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>GSP</td>
+                                    <td>37</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Rock Hill AP</td>
+                                    <td>44</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sec2" class="col-lg-12 mt-4">
+                <h2>Daily Precipitation Data</h2>
+                <p>Some information on data sources for precip data</p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#rainfall-collapse" role="button" aria-expanded="false" aria-controls="rainfall-collapse">View Data Table</button>
+                <button class="btn btn-outline-success">Download CSV</button>
+                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <div class="collapse" id="rainfall-collapse">
+                <div class="table-div p-3 mt-3">
+                    <h3>Daily Precip Table</h3>
+                    <table id="rainfall-table">
+                        <thead>
+                            <tr>
+                                <th>StationName</th>
+                                <th>9/14/2018</th>
+                                <th>9/15/2018</th>
+                                <th>9/16/2018</th>
+                                <th>9/17/2018</th>
+                                <th>Total</th>
+                                <th>c24hr</th>
+                                <th>c2day</th>
+                                <th>c3day</th>
+                                <th>c4day</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AIKEN 2 E</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0.9</td>
+                                <td>0.13</td>
+                                <td>1.03</td>
+                                <td>0.9</td>
+                                <td>1.03</td>
+                                <td>1.03</td>
+                                <td>1.03</td>
+                            </tr>
+                            <tr>
+                                <td>ANDERSON</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0.34</td>
+                                <td>0.2</td>
+                                <td>0.54</td>
+                                <td>0.34</td>
+                                <td>0.54</td>
+                                <td>0.54</td>
+                                <td>0.54</td>
+                            </tr>
+                            <tr>
+                                <td>BATESBURG</td>
+                                <td>0</td>
+                                <td>0.22</td>
+                                <td>2.4</td>
+                                <td>0.66</td>
+                                <td>3.28</td>
+                                <td>2.4</td>
+                                <td>3.06</td>
+                                <td>3.28</td>
+                                <td>3.28</td>
+                            </tr>
+                            <tr>
+                                <td>BENNETTSVILLE 1.2 SE</td>
+                                <td>0</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>3.39</td>
+                                <td>3.39</td>
+                                <td>3.39</td>
+                                <td>3.39</td>
+                                <td>3.39</td>
+                                <td>3.39</td>
+                            </tr>
+                            <tr>
+                                <td>BLACKVILLE 3 W</td>
+                                <td>0</td>
+                                <td>1.27</td>
+                                <td>0.24</td>
+                                <td>2.71</td>
+                                <td>4.22</td>
+                                <td>2.71</td>
+                                <td>2.95</td>
+                                <td>4.22</td>
+                                <td>4.22</td>
+                            </tr>
+                            <tr>
+                                <td>CADES 4 W</td>
+                                <td>0</td>
+                                <td>2.01</td>
+                                <td>2.1</td>
+                                <td>0.6</td>
+                                <td>4.71</td>
+                                <td>2.1</td>
+                                <td>4.11</td>
+                                <td>4.71</td>
+                                <td>4.71</td>
+                            </tr>
+                            <tr>
+                                <td>CATAWBA</td>
+                                <td>0</td>
+                                <td>0.42</td>
+                                <td>3.05</td>
+                                <td>3.51</td>
+                                <td>6.98</td>
+                                <td>3.51</td>
+                                <td>6.56</td>
+                                <td>6.98</td>
+                                <td>6.98</td>
+                            </tr>
+                            <tr>
+                                <td>CHERAW </td>
+                                <td>0</td>
+                                <td>1.99</td>
+                                <td>10.75</td>
+                                <td>9.84</td>
+                                <td>22.58</td>
+                                <td>10.75</td>
+                                <td>20.59</td>
+                                <td>22.58</td>
+                                <td>22.58</td>
+                            </tr>
+                            <tr>
+                                <td>CHERAW 1.2 ESE</td>
+                                <td>0</td>
+                                <td>1.99</td>
+                                <td>10.75</td>
+                                <td>9.84</td>
+                                <td>22.58</td>
+                                <td>10.75</td>
+                                <td>20.59</td>
+                                <td>22.58</td>
+                                <td>22.58</td>
+                            </tr>
+                            <tr>
+                                <td>CHESTERFIELD 3E</td>
+                                <td>&nbsp;</td>
+                                <td>1.58</td>
+                                <td>10.82</td>
+                                <td>4.69</td>
+                                <td>17.09</td>
+                                <td>10.82</td>
+                                <td>15.51</td>
+                                <td>17.09</td>
+                                <td>17.09</td>
+                            </tr>
+                            <tr>
+                                <td>CONWAY 6.2 E</td>
+                                <td>0.16</td>
+                                <td>6.4</td>
+                                <td>3.07</td>
+                                <td>5.76</td>
+                                <td>15.39</td>
+                                <td>6.4</td>
+                                <td>9.47</td>
+                                <td>15.23</td>
+                                <td>5.76</td>
+                            </tr>
+                            <tr>
+                                <td>COWARD 5.1 NNW</td>
+                                <td>0.86</td>
+                                <td>2</td>
+                                <td>3.6</td>
+                                <td>&nbsp;</td>
+                                <td>6.46</td>
+                                <td>3.6</td>
+                                <td>5.6</td>
+                                <td>6.46</td>
+                                <td>6.46</td>
+                            </tr>
+                            <tr>
+                                <td>DARLINGTON</td>
+                                <td>0</td>
+                                <td>1.47</td>
+                                <td>6.55</td>
+                                <td>3</td>
+                                <td>11.02</td>
+                                <td>6.55</td>
+                                <td>9.55</td>
+                                <td>11.02</td>
+                                <td>11.02</td>
+                            </tr>
+                            <tr>
+                                <td>DARLINGTON 7.3 SSW</td>
+                                <td>0</td>
+                                <td>1.47</td>
+                                <td>6.55</td>
+                                <td>3</td>
+                                <td>11.02</td>
+                                <td>6.55</td>
+                                <td>9.55</td>
+                                <td>11.02</td>
+                                <td>11.02</td>
+                            </tr>
+                            <tr>
+                                <td>DILLON 3.8 NW</td>
+                                <td>0</td>
+                                <td>3.63</td>
+                                <td>9.25</td>
+                                <td>5.5</td>
+                                <td>18.38</td>
+                                <td>9.25</td>
+                                <td>14.75</td>
+                                <td>18.38</td>
+                                <td>18.38</td>
+                            </tr>
+                            <tr>
+                                <td>ELLIOTT 0.8 NW</td>
+                                <td>0</td>
+                                <td>0.87</td>
+                                <td>2.9</td>
+                                <td>0.72</td>
+                                <td>4.49</td>
+                                <td>2.9</td>
+                                <td>3.77</td>
+                                <td>4.49</td>
+                                <td>4.49</td>
+                            </tr>
+                            <tr>
+                                <td>FLORENCE 2.1 SW</td>
+                                <td>&nbsp;</td>
+                                <td>2.56</td>
+                                <td>3.51</td>
+                                <td>2.11</td>
+                                <td>8.18</td>
+                                <td>3.51</td>
+                                <td>6.07</td>
+                                <td>8.18</td>
+                                <td>8.18</td>
+                            </tr>
+                            <tr>
+                                <td>FLORENCE REGIONAL AIRPORT</td>
+                                <td>1.47</td>
+                                <td>2.89</td>
+                                <td>3.26</td>
+                                <td>0.04</td>
+                                <td>7.66</td>
+                                <td>3.26</td>
+                                <td>6.15</td>
+                                <td>7.62</td>
+                                <td>7.66</td>
+                            </tr>
+                            <tr>
+                                <td>GEORGETOWN 6.0 S</td>
+                                <td>0.1</td>
+                                <td>4.17</td>
+                                <td>1.56</td>
+                                <td>5.25</td>
+                                <td>11.08</td>
+                                <td>5.25</td>
+                                <td>6.81</td>
+                                <td>10.98</td>
+                                <td>11.08</td>
+                            </tr>
+                            <tr>
+                                <td>GEORGETOWN COUNTY AIRPORT</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>6.14</td>
+                                <td>4.01</td>
+                                <td>10.15</td>
+                                <td>6.14</td>
+                                <td>10.15</td>
+                                <td>10.15</td>
+                                <td>10.15</td>
+                            </tr>
+                            <tr>
+                                <td>HARTSVILLE</td>
+                                <td>0</td>
+                                <td>0.8</td>
+                                <td>6.33</td>
+                                <td>4</td>
+                                <td>11.13</td>
+                                <td>6.33</td>
+                                <td>10.33</td>
+                                <td>11.13</td>
+                                <td>11.13</td>
+                            </tr>
+                            <tr>
+                                <td>HARTSVILLE 1.7 NW</td>
+                                <td>0.01</td>
+                                <td>1.19</td>
+                                <td>6.44</td>
+                                <td>3.75</td>
+                                <td>11.39</td>
+                                <td>6.44</td>
+                                <td>10.19</td>
+                                <td>11.38</td>
+                                <td>11.39</td>
+                            </tr>
+                            <tr>
+                                <td>HARTSVILLE 5.4 WSW</td>
+                                <td>0</td>
+                                <td>0.92</td>
+                                <td>4.9</td>
+                                <td>2.66</td>
+                                <td>8.48</td>
+                                <td>4.9</td>
+                                <td>7.56</td>
+                                <td>8.48</td>
+                                <td>8.48</td>
+                            </tr>
+                            <tr>
+                                <td>KINGSTREE 7.9 NW</td>
+                                <td>&nbsp;</td>
+                                <td>2.8</td>
+                                <td>3.94</td>
+                                <td>0.13</td>
+                                <td>6.87</td>
+                                <td>3.94</td>
+                                <td>6.74</td>
+                                <td>6.87</td>
+                                <td>6.87</td>
+                            </tr>
+                            <tr>
+                                <td>KINGSTREE 9.5 NW</td>
+                                <td>&nbsp;</td>
+                                <td>2.38</td>
+                                <td>3.87</td>
+                                <td>0.21</td>
+                                <td>6.46</td>
+                                <td>3.87</td>
+                                <td>6.25</td>
+                                <td>6.46</td>
+                                <td>6.46</td>
+                            </tr>
+                            <tr>
+                                <td>LAKE CITY 2 SE</td>
+                                <td>0</td>
+                                <td>2.56</td>
+                                <td>3.1</td>
+                                <td>0.45</td>
+                                <td>6.11</td>
+                                <td>3.1</td>
+                                <td>5.66</td>
+                                <td>6.11</td>
+                                <td>6.11</td>
+                            </tr>
+                            <tr>
+                                <td>LORIS 1.4 ENE</td>
+                                <td>0.35</td>
+                                <td>8.19</td>
+                                <td>3.64</td>
+                                <td>11</td>
+                                <td>23.18</td>
+                                <td>11</td>
+                                <td>14.64</td>
+                                <td>22.83</td>
+                                <td>23.18</td>
+                            </tr>
+                            <tr>
+                                <td>LORIS 2.9 WSW</td>
+                                <td>0.06</td>
+                                <td>6.63</td>
+                                <td>5.26</td>
+                                <td>11.68</td>
+                                <td>23.63</td>
+                                <td>11.68</td>
+                                <td>16.94</td>
+                                <td>23.57</td>
+                                <td>23.63</td>
+                            </tr>
+                            <tr>
+                                <td>MANNING 1.9 SSE</td>
+                                <td>0</td>
+                                <td>1.28</td>
+                                <td>3</td>
+                                <td>0.16</td>
+                                <td>4.44</td>
+                                <td>3</td>
+                                <td>4.28</td>
+                                <td>4.44</td>
+                                <td>4.44</td>
+                            </tr>
+                            <tr>
+                                <td>MARION</td>
+                                <td>1.3</td>
+                                <td>2.65</td>
+                                <td>4.75</td>
+                                <td>4.75</td>
+                                <td>13.45</td>
+                                <td>4.75</td>
+                                <td>9.5</td>
+                                <td>12.15</td>
+                                <td>13.45</td>
+                            </tr>
+                            <tr>
+                                <td>MCCLELLANVILLE 0.5 ESE</td>
+                                <td>0.03</td>
+                                <td>1.82</td>
+                                <td>0.7</td>
+                                <td>2.46</td>
+                                <td>5.01</td>
+                                <td>2.46</td>
+                                <td>3.16</td>
+                                <td>4.98</td>
+                                <td>5.01</td>
+                            </tr>
+                            <tr>
+                                <td>MCCLELLANVILLE 7 NE</td>
+                                <td>1.88</td>
+                                <td>2.33</td>
+                                <td>3.36</td>
+                                <td>0.01</td>
+                                <td>7.58</td>
+                                <td>3.36</td>
+                                <td>5.69</td>
+                                <td>7.57</td>
+                                <td>7.58</td>
+                            </tr>
+                            <tr>
+                                <td>MULLINS</td>
+                                <td>0.69</td>
+                                <td>3.5</td>
+                                <td>7.21</td>
+                                <td>4.64</td>
+                                <td>16.04</td>
+                                <td>7.21</td>
+                                <td>11.85</td>
+                                <td>15.35</td>
+                                <td>16.04</td>
+                            </tr>
+                            <tr>
+                                <td>MYRTLE BEACH</td>
+                                <td>0.26</td>
+                                <td>3.5</td>
+                                <td>3.5</td>
+                                <td>2.05</td>
+                                <td>9.31</td>
+                                <td>3.5</td>
+                                <td>7</td>
+                                <td>9.05</td>
+                                <td>9.31</td>
+                            </tr>
+                            <tr>
+                                <td>MYRTLE BEACH 5.0 WNW</td>
+                                <td>0.07</td>
+                                <td>5.62</td>
+                                <td>3.5</td>
+                                <td>3.65</td>
+                                <td>12.84</td>
+                                <td>5.62</td>
+                                <td>9.12</td>
+                                <td>12.77</td>
+                                <td>12.84</td>
+                            </tr>
+                            <tr>
+                                <td>MYRTLE BEACH 5.2 SW</td>
+                                <td>0.16</td>
+                                <td>6.93</td>
+                                <td>2.54</td>
+                                <td>1.4</td>
+                                <td>11.03</td>
+                                <td>6.93</td>
+                                <td>9.47</td>
+                                <td>10.87</td>
+                                <td>11.03</td>
+                            </tr>
+                            <tr>
+                                <td>MYRTLE BEACH 8.4 WNW</td>
+                                <td>0.03</td>
+                                <td>6.38</td>
+                                <td>3.72</td>
+                                <td>6.9</td>
+                                <td>17.03</td>
+                                <td>6.9</td>
+                                <td>10.62</td>
+                                <td>17</td>
+                                <td>17.03</td>
+                            </tr>
+                            <tr>
+                                <td>MYRTLE BEACH 8.4 WNW</td>
+                                <td>0.02</td>
+                                <td>5.84</td>
+                                <td>3.27</td>
+                                <td>6.28</td>
+                                <td>15.41</td>
+                                <td>6.28</td>
+                                <td>9.55</td>
+                                <td>15.39</td>
+                                <td>15.41</td>
+                            </tr>
+                            <tr>
+                                <td>NORTH MYRTLE BEACH</td>
+                                <td>5.71</td>
+                                <td>3.72</td>
+                                <td>1.95</td>
+                                <td>0.21</td>
+                                <td>11.59</td>
+                                <td>5.71</td>
+                                <td>9.43</td>
+                                <td>11.38</td>
+                                <td>11.59</td>
+                            </tr>
+                            <tr>
+                                <td>OAKLAND 1.5 NE</td>
+                                <td>&nbsp;</td>
+                                <td>0.18</td>
+                                <td>2.44</td>
+                                <td>0.21</td>
+                                <td>2.83</td>
+                                <td>2.44</td>
+                                <td>2.65</td>
+                                <td>2.83</td>
+                                <td>2.83</td>
+                            </tr>
+                            <tr>
+                                <td>PAGELAND 9.0 WNW</td>
+                                <td>0</td>
+                                <td>0.22</td>
+                                <td>4.27</td>
+                                <td>5.35</td>
+                                <td>9.84</td>
+                                <td>5.35</td>
+                                <td>9.62</td>
+                                <td>9.84</td>
+                                <td>9.84</td>
+                            </tr>
+                            <tr>
+                                <td>PAWLEY'S ISLAND 2.6 N</td>
+                                <td>0.08</td>
+                                <td>7.3</td>
+                                <td>2.7</td>
+                                <td>5.67</td>
+                                <td>15.75</td>
+                                <td>7.3</td>
+                                <td>10</td>
+                                <td>15.67</td>
+                                <td>15.75</td>
+                            </tr>
+                            <tr>
+                                <td>SUMTER 0.2 NE</td>
+                                <td>0</td>
+                                <td>0.52</td>
+                                <td>3.56</td>
+                                <td>0.08</td>
+                                <td>4.16</td>
+                                <td>3.56</td>
+                                <td>4.08</td>
+                                <td>4.16</td>
+                                <td>4.16</td>
+                            </tr>
+                            <tr>
+                                <td>SUMTER 0.3 ENE</td>
+                                <td>&nbsp;</td>
+                                <td>0.38</td>
+                                <td>3.55</td>
+                                <td>0.08</td>
+                                <td>4.01</td>
+                                <td>3.55</td>
+                                <td>3.93</td>
+                                <td>4.01</td>
+                                <td>4.01</td>
+                            </tr>
+                            <tr>
+                                <td>SUMTER 1.3 SE</td>
+                                <td>0</td>
+                                <td>0.56</td>
+                                <td>3.63</td>
+                                <td>0.13</td>
+                                <td>4.32</td>
+                                <td>3.63</td>
+                                <td>4.19</td>
+                                <td>4.32</td>
+                                <td>4.32</td>
+                            </tr>
+                            <tr>
+                                <td>SUMTER 3.6 SSW</td>
+                                <td>0</td>
+                                <td>0.55</td>
+                                <td>3.66</td>
+                                <td>0.18</td>
+                                <td>4.39</td>
+                                <td>3.66</td>
+                                <td>4.21</td>
+                                <td>4.39</td>
+                                <td>4.39</td>
+                            </tr>
+                            <tr>
+                                <td>SURFSIDE BEACH 1.0 NE</td>
+                                <td>0.05</td>
+                                <td>4.4</td>
+                                <td>2.49</td>
+                                <td>1.35</td>
+                                <td>8.29</td>
+                                <td>4.4</td>
+                                <td>6.89</td>
+                                <td>8.24</td>
+                                <td>8.29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div id="sec3" class="col-lg-12 mt-4">
+                <h2>Precipitation and Average Recurrence Interval Grids</h2>
+                <p>Some information about generating precip and ari grids, metstat, etc. Also storm comparison. grid of image thumbnails and ability to view images.</p>
+                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <div class="my-2 img-div">
+                    <img class="img-fluid" src="maps/precip_total_2018.jpg"><br>
+                    <a href="maps/precip_total_2018.jpg">Full Size Image of Map</a>
+                </div>
+                <div class="my-2 img-div">
+                    <img class="img-fluid" src="maps/ari_2018_florence.jpg"><br>
+                    <a href="maps/ari_2018_florence.jpg">Full Size Image of Map</a>
+                </div>
+            </div>
+            <div id="sec4" class="col-lg-12 mt-4">
+                <h2>Storm Comparisons</h2>
+                <p>Some information about generating precip and ari grids, metstat, etc. Also storm comparison. grid of image thumbnails and ability to view images.</p>
+                <div class="my-2 img-div">
+                    <img class="img-fluid" src="maps/precip_ari_compare.jpg"><br>
+                    <a href="maps/precip_ari_compare.jpg">Full Size Image of Map</a>
+                </div>
+                <div class="my-2 img-div">
+                    <img class="img-fluid" src="maps/precip_compare.jpg"><br>
+                    <a href="maps/precip_compare.jpg">Full Size Image of Map</a>
+                </div>
+            </div>
+            <div id="sec5" class="col-lg-12 mt-4">
+                <h2>Peak Stage and Streamflow Data</h2>
+                <p>Some information about where the data came from, publication link, etc.</p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#streamflow-collapse" role="button" aria-expanded="false" aria-controls="streamflow-collapse">View Data Table</button>
+                <button class="btn btn-outline-success">Download CSV</button>
+                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <div class="collapse" id="streamflow-collapse">
+                    <div class="table-div p-3 mt-3">
+                        <h3>Peak Stage and Streamflow Table</h3>
+                        <table id="streamflow-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th colspan="4">H. Florence Peaks</th>
+                                    <th colspan="3">Historical Record</th>
+                                </tr>
+
+                                <tr>
+                                    <th>Gage Name</th>
+                                    <th>Gage Number</th>
+                                    <th>Stage (ft)</th>
+                                    <th>Flow (cfs)</th>
+                                    <th>Day (Sept)</th>
+                                    <th>Rank / POR*</th>
+                                    <th>Stage (ft)</th>
+                                    <th>Flow (cfs)</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Black Creek below Chesterfield</td>
+                                    <td>02130840</td>
+                                    <td>11.99</td>
+                                    <td>3690</td>
+                                    <td>17</td>
+                                    <td>1/13</td>
+                                    <td>10.07</td>
+                                    <td>1480</td>
+                                    <td>2006</td>
+                                </tr>
+                                <tr>
+                                    <td>Black Creek near Quinby</td>
+                                    <td>02130980</td>
+                                    <td>17.37</td>
+                                    <td>6880</td>
+                                    <td>17</td>
+                                    <td>1/17</td>
+                                    <td>16.81</td>
+                                    <td>6530</td>
+                                    <td>2015</td>
+                                </tr>
+                                <tr>
+                                    <td>Little Pee Dee River at Galivants Ferry</td>
+                                    <td>02135000</td>
+                                    <td>17.21</td>
+                                    <td>66900</td>
+                                    <td>21</td>
+                                    <td>1/77</td>
+                                    <td>17.1</td>
+                                    <td>59300</td>
+                                    <td>2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Lynches Near Bishopville</td>
+                                    <td>02131500</td>
+                                    <td>18.22</td>
+                                    <td>18000</td>
+                                    <td>18</td>
+                                    <td>2/76</td>
+                                    <td>22.35</td>
+                                    <td>29400</td>
+                                    <td>1945</td>
+                                </tr>
+                                <tr>
+                                    <td>Pee Dee Near Bennettsville</td>
+                                    <td>02130561</td>
+                                    <td>93.06</td>
+                                    <td>192000</td>
+                                    <td>18</td>
+                                    <td>1/27</td>
+                                    <td>89.94</td>
+                                    <td>124000</td>
+                                    <td>2003</td>
+                                </tr>
+                                <tr>
+                                    <td>Pee Dee River at Pee Dee</td>
+                                    <td>02131000</td>
+                                    <td>31.83</td>
+                                    <td>132000</td>
+                                    <td>21</td>
+                                    <td>2/80</td>
+                                    <td>33.3</td>
+                                    <td>220000</td>
+                                    <td>1945</td>
+                                </tr>
+                                <tr>
+                                    <td>Pee Dee River below Pee Dee, SC</td>
+                                    <td>02131010</td>
+                                    <td>36.96</td>
+                                    <td>139000</td>
+                                    <td>21</td>
+                                    <td>1/22</td>
+                                    <td>33.96</td>
+                                    <td>99000</td>
+                                    <td>2003</td>
+                                </tr>
+                                <tr>
+                                    <td>Pee Dee at HWY 701 Near Bucksport</td>
+                                    <td>02135200</td>
+                                    <td>25</td>
+                                    <td>136000</td>
+                                    <td>26</td>
+                                    <td>1/15</td>
+                                    <td>22.6</td>
+                                    <td>124000</td>
+                                    <td>2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Waccamaw River near Longs</td>
+                                    <td>02110500</td>
+                                    <td>20.22</td>
+                                    <td>57500</td>
+                                    <td>20</td>
+                                    <td>1/68</td>
+                                    <td>17.94</td>
+                                    <td>28200</td>
+                                    <td>1999</td>
+                                </tr>
+                                <tr>
+                                    <td>Waccamaw River at Conway Marina</td>
+                                    <td>02110704</td>
+                                    <td>21.16</td>
+                                    <td>49000</td>
+                                    <td>26</td>
+                                    <td>1/24</td>
+                                    <td>17.64</td>
+                                    <td>24100</td>
+                                    <td>1999</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="my-2 img-div">
+                    <img class = "img-fluid" src="maps/basins_map.jpg" title="florence rainfall with pee dee and santee river basins map" alt="florence rainfall with pee dee and santee river basins map"><br>
+                    <a href="maps/basins_map.jpg">Full Size Image of Map</a>
+                </div>    
+                <h3 class="mt-3">Interactive Hydrographs</h3>
+                <ul>
+                    <li><a href="#">Pee Dee River System</a></li>
+                    <li><a href="#">Waccamaw River System</a></li>
+                    <li><a href="#">Lynches River System</a></li>
+                </ul>
+                
+            </div>
+            <div id="sec6" class="col-lg-12 my-4">
+                <h2>Tidal Data</h2>
+                <p>Some information about tidal data.</p>
+                <h3 class="mt-3">Interactive Tidal Charts</h3>
+                <ul>
+                    <li><a href="#">Charleston</a></li>
+                    <li><a href="#">Springmaid Peer</a></li>
+                    <li><a href="#">Oyster Landing</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center text-white">                
+                    <p>SC Department of Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        
+                    </p>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>2019
+                    </p>
+                </div>
+            
+            </div>
+            
+        </div>        
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/sc-1.5.0/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#wind-table').DataTable({
+                scrollY:400,
+                paging:false,
+                searching:false
+            });
+            $('#rainfall-table').DataTable({
+                scrollY: 400,
+                scrollX: true,
+                paging:false,
+                searching:false
+            });
+            $('#streamflow-table').DataTable({
+                scrollY:        false,
+                scrollX: true,
+                paging:false,
+                searching:false
+            });
+        });
+    </script>
+
+</body>
+
+</html>
