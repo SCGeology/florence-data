@@ -34,42 +34,56 @@
             border-radius:3px;
             max-width: 300px;
         }
+        #streamflow-table td:nth-child(3),
+        #streamflow-table td:nth-child(4),
+        #streamflow-table td:nth-child(5),
+        #streamflow-table td:nth-child(6),
+        #flo-peak-header
+            {
+                background-color:#e3f4ef;
+            }
+        #streamflow-table td:nth-child(7),
+        #streamflow-table td:nth-child(8),
+        #streamflow-table td:nth-child(9),
+        #flo-hist-header
+            {
+                background-color:#e5f4e3;
+            }
     </style>
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Hurricane Florence - Data</a>
-        </div>
-    </nav>
-
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 ">
                 <h1 class="mt-5">Hurricane Florence</h1>
 
-                <p class="lead">Data from the SCDNR State Climate Office from Hurricane Florence. Data and maps on this page are used in the <a href="https://scdnr.maps.arcgis.com/apps/MapJournal/index.html?appid=c2d63441bc974cadb52f0bed7528aae1" target="_blank">'Hurricane Florence in South Carolina' StoryMap</a>.</p>
+                <p class="lead">Data and maps on this page were compiled by the SC DNR State Climate Office. They are used in the <a href="https://scdnr.maps.arcgis.com/apps/MapJournal/index.html?appid=c2d63441bc974cadb52f0bed7528aae1" target="_blank">Hurricane Florence in South Carolina StoryMap</a>.</p>
             </div>
-            <div class="col-lg-12">
-                <ul>
-                    <li><a href="#sec1">Wind Gusts</a></li>
-                    <li><a href="#sec2">Daily Precipitation</a></li>
-                    <li><a href="#sec3">Precipitation and ARI Grids</a></li>
-                    <li><a href="#sec4">Storm Comparison Maps</a></li>
-                    <li><a href="#sec5">Peak Stage and Streamflow Data</a></li>
-                    <li><a href="#sec6">Tidal Data</a></li>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="mt-2">
+                    <li><a href="#sec1" title="go to wind gusts section">Wind Gusts</a></li>
+                    <li><a href="#sec2" title="go to daily precipitation section">Daily Precipitation</a></li>
+                    <li><a href="#sec3" title="go to precipitation and ARI grids section">Precipitation and ARI Grids</a></li>
+                    <li><a href="#sec4" title="go to storm comparisons section">Storm Comparison Maps</a></li>
+                    <li><a href="#sec5" title="go to peak stage and streamflow section">Peak Stage and Streamflow Data</a></li>
+                    <li><a href="#sec6" title="go to tidal data section">Tidal Data</a></li>
                 </ul>
             </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="maps/Hurricane-Florence.jpg" alt="satellite image of hurricane florence">
+            </div>
+        </div>
+        <div class="row">
             <div id="sec1" class="col-lg-12 mt-4">
                 <h2>Wind Gusts</h2>
-                <p>Some information on data sources for Wind Gusts</p>
-                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#wind-collapse" role="button" aria-expanded="false" aria-controls="wind-collapse">View Data Table</button>
-                <button class="btn btn-outline-success">Download CSV</button>
-                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <p>Wind Gusts data were collected from the NOAA National Weather Service, <a href="https://www.weather.gov/ilm/HurricaneFlorence">Wilmington NC Weather Forecast Office</a> and <a href="https://www.weather.gov/media/cae/FallWinter2018-OfficeNewsletter.pdf">Columbia SC Weather Forecast Office</a>.</p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#wind-collapse" role="button" aria-expanded="false" aria-controls="wind-collapse" title="view data table of wind gusts data">View Data Table</button>
+                <a href="data/hur-florence-wind-gusts.csv" class="btn btn-outline-success" title="download CSV of wind gusts data">Download CSV</a>
+                <a href="https://scdnr.maps.arcgis.com/home/webmap/viewer.html?webmap=8be2ec42346a4db3b24445fb5988205f" target="_blank" class="btn btn-outline-info" title="view ArcGIS Online map of wind gusts data">ArcGIS Online Map</a>
                 <div class="collapse" id="wind-collapse">
                     <div class="table-div p-3 mt-3" >
                         <h3>Wind Gusts Table</h3>
@@ -303,13 +317,14 @@
                     </div>
                 </div>
             </div>
-
+        </div>    
+        <div class="row">
             <div id="sec2" class="col-lg-12 mt-4">
                 <h2>Daily Precipitation Data</h2>
-                <p>Some information on data sources for precip data</p>
-                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#rainfall-collapse" role="button" aria-expanded="false" aria-controls="rainfall-collapse">View Data Table</button>
-                <button class="btn btn-outline-success">Download CSV</button>
-                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <p>Precipitation data were obtained from <a href="http://scacis.rcc-acis.org/">NOAA Regional Climate Centers SC ACIS</a>. Station names can be used as IDs to find more information about individual stations and records.</p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#rainfall-collapse" role="button" aria-expanded="false" aria-controls="rainfall-collapse" title="view data table of daily rainfall data">View Data Table</button>
+                <a href="data/hur-florence-rainfall-totals.csv" class="btn btn-outline-success" title="download CSV of daily rainfall data">Download CSV</a>
+                <a href="https://scdnr.maps.arcgis.com/apps/webappviewer/index.html?id=5af666e4635d47d89dd83d1d47de19be" target="_blank" class="btn btn-outline-info" title="view ArcGIS Online map of daily rainfall data">ArcGIS Online Map</a>
                 <div class="collapse" id="rainfall-collapse">
                 <div class="table-div p-3 mt-3">
                     <h3>Daily Precip Table</h3>
@@ -898,37 +913,43 @@
                 </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div id="sec3" class="col-lg-12 mt-4">
                 <h2>Precipitation and Average Recurrence Interval Grids</h2>
-                <p>Some information about generating precip and ari grids, metstat, etc. Also storm comparison. grid of image thumbnails and ability to view images.</p>
-                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <p>Precipitation and Average Return Intervals coverage across the state were developed by MetStorm®, a precipitation analysis system, using innovative algorithms to blend 857 daily and hourly gauge stations provided by Synoptic and the South Carolina State Climate Office, dual-pol radar estimated precipitation provided by Weather Decision Technologies, Inc, and satellite precipitation estimates from NOAA. The maps were produced by MetStat, Inc. for the State Climate Office.</p>
+                <a href="https://scdnr.maps.arcgis.com/apps/webappviewer/index.html?id=f272c01229a44a1ca9f58de798f73a8d" target="_blank" class="btn btn-outline-info">ArcGIS Online Map</a>
                 <div class="my-2 img-div">
-                    <img class="img-fluid" src="maps/precip_total_2018.jpg"><br>
-                    <a href="maps/precip_total_2018.jpg">Full Size Image of Map</a>
+                    <img class="img-fluid" src="maps/precip_total_2018.jpg" alt="map of rainfall totals for hurricane florence in south carolina"><br>
+                    <a href="maps/precip_total_2018.jpg" title="view full size image of map of rainfall totals for hurricane florence in south carolina">Full Size Image of Map</a>
                 </div>
                 <div class="my-2 img-div">
-                    <img class="img-fluid" src="maps/ari_2018_florence.jpg"><br>
-                    <a href="maps/ari_2018_florence.jpg">Full Size Image of Map</a>
+                    <img class="img-fluid" src="maps/ari_2018_florence.jpg" alt="map of ARI for hurricane florence in south carolina"><br>
+                    <a href="maps/ari_2018_florence.jpg" title="view full size image of map of ARI for hurricane florence in south carolina">Full Size Image of Map</a>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div id="sec4" class="col-lg-12 mt-4">
                 <h2>Storm Comparisons</h2>
-                <p>Some information about generating precip and ari grids, metstat, etc. Also storm comparison. grid of image thumbnails and ability to view images.</p>
+                <p>ARI and precipitation grids from Hurricane Florence, Hurricane Matthew, and the 2015 storm were analyzed to compare patterns, and areas in the state impacted by multiple events in the past four years. </p>
                 <div class="my-2 img-div">
-                    <img class="img-fluid" src="maps/precip_ari_compare.jpg"><br>
-                    <a href="maps/precip_ari_compare.jpg">Full Size Image of Map</a>
+                    <img class="img-fluid" src="maps/precip_ari_compare.jpg" alt="maps showing ARI and rainfall for hurricane florence, hurricane matthew, and the 2015 storm"><br>
+                    <a href="maps/precip_ari_compare.jpg" title="view full size image of maps showing ARI and rainfall for hurricane florence, hurricane matthew, and the 2015 storm">Full Size Image of Map</a>
                 </div>
                 <div class="my-2 img-div">
-                    <img class="img-fluid" src="maps/precip_compare.jpg"><br>
-                    <a href="maps/precip_compare.jpg">Full Size Image of Map</a>
+                    <img class="img-fluid" src="maps/precip_compare.jpg" alt="maps showing where in south carolina were impacted by rainfall from multiple storms"><br>
+                    <a href="maps/precip_compare.jpg" title="view full size image of map showing storm comparison">Full Size Image of Map</a>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div id="sec5" class="col-lg-12 mt-4">
                 <h2>Peak Stage and Streamflow Data</h2>
-                <p>Some information about where the data came from, publication link, etc.</p>
-                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#streamflow-collapse" role="button" aria-expanded="false" aria-controls="streamflow-collapse">View Data Table</button>
-                <button class="btn btn-outline-success">Download CSV</button>
-                <button class="btn btn-outline-info">ArcGIS Online Map</button>
+                <p>Peak Stage and Streamflow data were compiled from the <a href="https://pubs.usgs.gov/of/2018/1172/ofr20181172.pdf">USGS Open file report 20181172</a> - Preliminary Peak Stage and Streamflow Data at Selected U.S. Geological Survey Streamgaging Stations in North and South Carolina for Flooding Following Hurricane Florence, September 2018. Streamflow data were retrieved from the <a href="https://waterdata.usgs.gov/sc/nwis/rt">USGS National Water Information System</a>. </p>
+                <button class="btn btn-outline-primary" data-toggle="collapse" data-target="#streamflow-collapse" role="button" aria-expanded="false" aria-controls="streamflow-collapse" title="view data table of peak stage and streamflow data">View Data Table</button>
+                <a href="data/hur-florence-streamflow.csv" class="btn btn-outline-success" title="download csv of peak stage and streamflow data">Download CSV</a>
+                <a href="https://scdnr.maps.arcgis.com/home/webmap/viewer.html?webmap=ad7a6af0670a4b22bd8aedb67f6a2787" target="_blank" class="btn btn-outline-info" title="view ArcGIS online map of peak stage and streamflow data">ArcGIS Online Map</a>
                 <div class="collapse" id="streamflow-collapse">
                     <div class="table-div p-3 mt-3">
                         <h3>Peak Stage and Streamflow Table</h3>
@@ -937,8 +958,8 @@
                                 <tr>
                                     <th></th>
                                     <th></th>
-                                    <th colspan="4">H. Florence Peaks</th>
-                                    <th colspan="3">Historical Record</th>
+                                    <th id="flo-peak-header" colspan="4">H. Florence Peaks</th>
+                                    <th id="flo-hist-header" colspan="3">Historical Record</th>
                                 </tr>
 
                                 <tr>
@@ -1071,24 +1092,25 @@
                 
                 <div class="my-2 img-div">
                     <img class = "img-fluid" src="maps/basins_map.jpg" title="florence rainfall with pee dee and santee river basins map" alt="florence rainfall with pee dee and santee river basins map"><br>
-                    <a href="maps/basins_map.jpg">Full Size Image of Map</a>
+                    <a href="maps/basins_map.jpg" title="view full size image of florence rainfall and pee dee river basin map">Full Size Image of Map</a>
                 </div>    
                 <h3 class="mt-3">Interactive Hydrographs</h3>
                 <ul>
-                    <li><a href="hydrographs/peedee/index.html">Pee Dee River System</a></li>
-                    <li><a href="hydrographs/waccamaw/index.html">Waccamaw River System</a></li>
-                    <li><a href="hydrographs/lynches/index.html">Lynches River System</a></li>
+                    <li><a href="hydrographs/peedee/index.html" title="hydrograph for pee dee river basin streamflow gages">Pee Dee River System</a></li>
+                    <li><a href="hydrographs/waccamaw/index.html" title="hydrograph for waccamaw river basin streamflow gages">Waccamaw River System</a></li>
+                    <li><a href="hydrographs/lynches/index.html" title="hyrograph for lynches river basin streamflow gages">Lynches River System</a></li>
                 </ul>
-                
             </div>
+        </div>  
+        <div class="row">
             <div id="sec6" class="col-lg-12 my-4">
                 <h2>Tidal Data</h2>
-                <p>Some information about tidal data.</p>
+                <p>Tidal Data was retrieved from the <a href="https://tidesandcurrents.noaa.gov/map/index.html?region=South%20Carolina">NOAA Tides and Currents website</a>.</p>
                 <h3 class="mt-3">Interactive Tidal Charts</h3>
                 <ul>
-                    <li><a href="#">Charleston</a></li>
-                    <li><a href="#">Springmaid Peer</a></li>
-                    <li><a href="#">Oyster Landing</a></li>
+                    <li><a href="tidalgraphs/charleston/index.html" title="tidal graph for charleston tidal station">Charleston</a></li>
+                    <li><a href="tidalgraphs/springmaid/index.html" title="tidal graph for springmaid pier tidal station">Springmaid Pier</a></li>
+                    <li><a href="tidalgraphs/oyster/index.html" title="tidal graph for oyster landing tidal station">Oyster Landing</a></li>
                 </ul>
             </div>
         </div>
@@ -1097,16 +1119,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center text-white">                
-                    <p>SC Department of Natural Resources<br>
+                    <p>South Carolina State Climate Office<br>
+                        SC Department of Natural Resources<br>
                     Land, Water, and Conservation Division<br>
                         1000 Assembly Street<br>
                         Columbia, SC 29201<br>
-                        
                     </p>
+                    
+                    <img style="width:100px;" src="https://scgeology.github.io/hydro-new/images/dnr-logo-small.gif">
+                    
                     <p class="mt-3">Copyright © 
                         <script type="text/javascript">
                             document.write(new Date().getFullYear());
-                        </script>2019
+                        </script>
                     </p>
                 </div>
             
@@ -1124,20 +1149,21 @@
     <script>
         $(document).ready(function() {
             $('#wind-table').DataTable({
-                scrollY:400,
+                //scrollY:400,
+                //scrollX:true,
                 paging:false,
                 searching:false
             });
             $('#rainfall-table').DataTable({
-                scrollY: 400,
-                scrollX: true,
-                paging:false,
+                //scrollY: 400,
+                //scrollX: true,
+                paging: false,
                 searching:false
             });
             $('#streamflow-table').DataTable({
-                scrollY:        false,
-                scrollX: true,
-                paging:false,
+                //scrollY: false,
+                //scrollX: true,
+                paging: false,
                 searching:false
             });
         });
